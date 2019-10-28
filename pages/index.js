@@ -21,21 +21,35 @@ const Home = () => {
 
   return (
     <div>
+      <div className="title">
+        <h2>Class Chat</h2>
+      </div>
       <div className="chat">
         { chat.map(message => <Message name={message.name} text={message.text}/>) }
       </div>
-      <div>
+      <div className="capture">
         <Capture onSend= { onSend } />
       </div>
 
       <style jsx>{`
 
+      .title {
+        text-align:center;
+        margin-top: 10px;
+      }
+
       .chat {
         overflow: scroll;
         max-width:680px;
         width:680px;
-        height:100vh;
+        height:80vh;
         margin: 20px auto;
+      }
+
+      .capture {
+        max-width:700px;
+        width:700px;
+        margin: 0 auto;
       }
 
       `}</style>
